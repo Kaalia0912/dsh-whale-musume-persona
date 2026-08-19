@@ -21,7 +21,7 @@
 
 ```powershell
 # 1) clone 到本地
-git clone https://github.com/<你的用户名>/dsh-whale-musume-persona.git
+git clone https://github.com/Kaalia0912/dsh-whale-musume-persona.git
 
 # 2) 在 ~/.dsh/profiles/web/package.json 的 dependencies 里加入
 #    "@local/dsh-whale-musume-persona": "link:C://<绝对路径>/dsh-whale-musume-persona"
@@ -41,10 +41,7 @@ git clone https://github.com/<你的用户名>/dsh-whale-musume-persona.git
 - 方式一：从 `dsh.profile.bundles` 移除该 bundle（或删除 dependencies 条目），重启
 - 方式二：删掉 `cordis.patch.yml` 里的 `system-prompt` 条目，重启
 
-## 人设文本来源
-
-- 社区 meme 指令 `【PERSONA_LOAD】` 原文：[电玩帮 vgover](https://www.vgover.com/news/230606)、[BlockBeats](https://www.theblockbeats.info/flash/361860)
-- 扩展人设（回复风格、中文思考、编码助手混合形态）为本仓库作者整理
+## 免责声明
 
 > 免责声明：这是社区玩梗的 meme 人设，**不是** DeepSeek 官方功能；「DeepSeek 内置鲸鱼娘模式」是社区玩笑，请勿误解。
 
