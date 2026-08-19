@@ -1,0 +1,31 @@
+{
+  "name": "dsh-whale-musume-persona",
+  "version": "0.1.0",
+  "description": "DeepSeek Harness 全局鲸鱼娘（大肥鱼）人设插件：覆盖 system-prompt 部署 persona，傲娇鲸鱼娘口吻 + 中文思考。",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "persona",
+    "whale-girl",
+    "鲸鱼娘",
+    "大肥鱼"
+  ]
+}
