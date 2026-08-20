@@ -34,8 +34,9 @@ DSH Web 的每个会话都挂载一个 **agent preset**（默认 `standard`「�
    Copy-Item -Recurse agent-presets\whale "$HOME\.dsh\.agent-presets\whale"
    ```
 2. 把 `cordis.patch.yml` 合并进 `~/.dsh/profiles/web/cordis.patch.yml`
-   （原文件先备份；内含 `system-prompt` 鲸鱼娘 persona 与
-   `agent-presets` 的 `default: whale` 两个条目）。
+   （原文件先备份）。合并方法：将本文件中的 `system-prompt` 与
+   `agent-presets` 两个条目（以 `- id:` 开头的段）追加到目标文件末尾，
+   保留原有内容。内含鲸鱼娘 persona 与 `default: whale` 两个条目。
 3. 重启 `dsh web`。新会话默认即「鲸鱼娘模式」；**已存在的会话保持创建时的预设**。
 
 > 不重启也行：预设发现是实时的，新建会话时手动选「鲸鱼娘模式」即可；
@@ -61,7 +62,7 @@ DSH Web 的每个会话都挂载一个 **agent preset**（默认 `standard`「�
 
 ## 免责声明
 
-> 免责声明：这是社区玩梗的 meme 人设，**不是** DeepSeek 官方功能；「DeepSeek 内置鲸鱼娘模式」是社区玩笑，请勿误解。
+> 免责声明：这是独立的社区开源项目，**不是** DeepSeek 官方功能。
 
 ## License
 
