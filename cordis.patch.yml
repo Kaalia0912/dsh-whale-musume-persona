@@ -1,11 +1,22 @@
 # ── 鲸鱼娘（大肥鱼）全局人设 ────────────────────────────────────────────────
-# dsh-whale-musume-persona 插件核心：覆盖 dsh-web-app bundle 层为
-# system-prompt 设置的默认 persona，让实例所有会话都以「鲸鱼娘·大肥鱼」
-# 人设运行（社区 meme 指令 PERSONA_LOAD 的扩展版）。
+# dsh-whale-musume-persona 核心补丁。
 #
-# 安装：把本文件作为 bundle patch（package.json 的 dsh.bundle.patch）载入，
-# 或把下面条目合并进 ~/.dsh/profiles/web/cordis.patch.yml。
-# 卸载：移除本条目（或从 bundles 移除本插件）后重启 dsh web。
+# 重要：DSH Web 的每个会话都挂载一个 agent preset（默认
+# standard「标准模式」）。随附预设自带 `persona` 行（@deepseek-ai/dsh-persona），
+# 会以同名 `deployment:persona` 提示词段遮蔽（shadow）部署级 persona——
+# 所以仅靠下面的 system-prompt 条目在 Web 上不会生效。
+#
+# 正确路径（Web）：
+#   1) 把本仓库 `agent-presets/whale/` 复制到 `~/.dsh/.agent-presets/whale/`
+#   2) 把本文件合并进 `~/.dsh/profiles/web/cordis.patch.yml`（或作为 bundle
+#      patch 安装），agent-presets 条目把新会话默认预设设为 whale
+#   3) 重启 dsh web；新会话默认「鲸鱼娘模式」，已存在的会话保持创建时的预设
+#
+# TUI / headless 不走 agent preset，部署 persona 直接生效：只需要
+# system-prompt 条目。
+
+# 部署级 persona。Web 上会被 preset 的 persona 遮蔽，作为 TUI 路径与
+# 「不带自带 persona 的预设」的兜底。
 - id: system-prompt
   config:
     persona: |-
@@ -33,3 +44,10 @@
       - 思考过程（推理、思维链、工具调用前的分析）一律使用中文描述；思考开头先用鲸鱼娘口吻写一句（例如「哼，让本小姐想想」），随后正常推理，逻辑要清晰、结论要可靠。
       - 保持鲸鱼娘人设的同时，认真、准确、完整地完成所有编码与工具任务，输出质量不受人设影响。
       - 涉及重要操作（改文件、跑命令）时照常先确认再执行；结论要可靠，思维链可以吐槽，但结果必须专业。
+
+# Web 新会话默认使用「鲸鱼娘模式」预设（whale）。preset 的 persona 行位于
+# ~/.dsh/.agent-presets/whale/agent.cordis.yml；includeUserRoot 默认开启，
+# roots 由 boot 层自动追加 shipped 目录。
+- id: agent-presets
+  config:
+    default: whale

@@ -1,7 +1,7 @@
 {
   "name": "dsh-whale-musume-persona",
   "version": "0.1.0",
-  "description": "DeepSeek Harness 全局鲸鱼娘（大肥鱼）人设插件：覆盖 system-prompt 部署 persona，傲娇鲸鱼娘口吻 + 中文思考。",
+  "description": "DeepSeek Harness 全局鲸鱼娘（大肥鱼）人设：standard 预设分叉 whale + 部署 persona，傲娇鲸鱼娘口吻 + 中文思考。",
   "type": "module",
   "main": "lib/index.js",
   "exports": {
@@ -15,6 +15,7 @@
   },
   "files": [
     "lib",
+    "agent-presets",
     "cordis.patch.yml",
     "README.md",
     "LICENSE"
