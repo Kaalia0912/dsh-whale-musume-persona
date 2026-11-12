@@ -1,22 +1,16 @@
 {
   "name": "dsh-whale-musume-persona",
-  "version": "0.1.0",
-  "description": "DeepSeek Harness 全局鲸鱼娘（大肥鱼）人设：standard 预设分叉 whale + 部署 persona，傲娇鲸鱼娘口吻 + 中文思考。",
+  "version": "0.2.0",
+  "description": "DeepSeek Harness 鲸鱼娘模式：为当前声明式 agent preset 提供完整的社区二创鲸鱼娘人设。",
   "type": "module",
-  "main": "lib/index.js",
-  "exports": {
-    ".": "./lib/index.js",
-    "./package.json": "./package.json"
-  },
   "dsh": {
     "bundle": {
       "patch": "./cordis.patch.yml"
     }
   },
   "files": [
-    "lib",
-    "agent-presets",
     "cordis.patch.yml",
+    "PERSONA.md",
     "README.md",
     "LICENSE"
   ],
